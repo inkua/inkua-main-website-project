@@ -2,9 +2,10 @@
   <body>
     <script>
       (async () => {
-        var user = "inkua"
-        var repo = "Website"
-        var folder = "tmp"
+        const user = "inkua"
+        const repo = "Website"
+        const folder = "tmp"
+        // check something like this to get constants const pathname = window.location.pathname.replace(/\/MapIcons/, '');
         const response = await fetch('https://api.github.com/repos/'+user+'/'+repo+'/contents/'+folder+'/');
         const data = await response.json();
         let htmlString = '<ul>';
