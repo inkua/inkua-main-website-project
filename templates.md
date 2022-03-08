@@ -4,7 +4,7 @@
 - https://startbootstrap.com/?showPro=false
 
 ### Sitio con mail disposable que funciona con themewagon
-https://temp-mail.org/
+- https://temp-mail.org/
 ### Otros:
-https://maildrop.cc/
-https://www.mailinator.com/
+- https://maildrop.cc/
+- https://www.mailinator.com/
