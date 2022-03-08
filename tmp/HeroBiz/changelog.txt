@@ -1,0 +1,13 @@
+Version: 2.1.0
+  - Added mega menu navigation
+
+Version: 2.0.0
+  - Added 3 more homepage hero variations
+  - Added 6 new variables color schemes
+  - Changed the default color scheme
+  - Changed the default home page hero
+  - Updated the Bootstrap Icons to the latest version
+  - Updated the Swiper library to the latest version
+
+Version: 1.0.0
+  - Initial Release

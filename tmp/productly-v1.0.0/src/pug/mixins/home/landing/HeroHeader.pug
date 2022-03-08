@@ -1,0 +1,21 @@
+mixin HeroHeader
+  section.pt-7
+    .container
+      .row.align-items-center
+
+        .col-md-6.text-md-start.text-center.py-6
+
+          h1.mb-4.fs-9.fw-bold The Design Thinking Superpowers
+          p.mb-6.lead.text-secondary Tools tutorials, design and innovation experts, all
+            br.d-none.d-xl-block
+            | in one place! The most intuitive way to imagine
+            br.d-none.d-xl-block
+            | your next user experience.
+          .text-center.text-md-start
+            a.btn.btn-warning.me-3.btn-lg(href='#!' role='button') Get started
+            a.btn.btn-link.text-warning.fw-medium(href='#!' role='button' data-bs-toggle="modal" data-bs-target="#popupVideo")
+              span.fas.fa-play.me-2
+              | Watch the video    
+
+        .col-md-6.text-end
+          img.pt-7.pt-md-0.img-fluid(src=`${CWD}assets/img/hero/hero-img.png` alt='')

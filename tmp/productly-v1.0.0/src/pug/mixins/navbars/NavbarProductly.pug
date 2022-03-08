@@ -1,0 +1,21 @@
+mixin NavbarProductly 
+  nav.navbar.navbar-expand-lg.navbar-light.sticky-top(data-navbar-on-scroll)
+    .container
+      a.navbar-brand(href='index.html')
+        img(src=`${CWD}assets/img/logo.svg`   height="31" alt='logo')
+
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon 
+      #navbarSupportedContent.collapse.navbar-collapse.border-top.border-lg-0.mt-4.mt-lg-0
+        ul.navbar-nav.ms-auto
+          li.nav-item
+            a.nav-link(aria-current='page', href=`#feature`) Product
+          li.nav-item
+            a.nav-link(aria-current='page', href=`#validation`) Customers
+          li.nav-item
+            a.nav-link(aria-current='page', href=`#superhero`) Pricing
+          li.nav-item
+            a.nav-link(aria-current='page', href=`#marketing`) Resources
+        .d-flex.ms-lg-4
+          a.btn.btn-secondary-outline( href="#!") Sign In
+          a.btn.btn-warning.ms-3( href="#!") Sign Up
