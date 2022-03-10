@@ -20,3 +20,7 @@
 - https://github.com/sproogen/modern-resume-theme
 - https://github.com/BuckyMaler/global
  
+
+
+### otras notas:
+_tmp/arsha/index.html tiene boton de "watch video"
