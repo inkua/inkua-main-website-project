@@ -11,7 +11,7 @@ El template elegido es https://bootstrapmade.com/flexstart-bootstrap-startup-tem
 - Potenciales donantes(Fundaciones/empresas/gobiernos), 
 - Potenciales colaboradores (Profesionales/Mentores/Profesores) 
 - Potenciales participantes (Estudiantes)
-- Potenciales Aliados(ONGs, Influencers.). 
+- Potenciales Aliados(ONGs/Referentes/Influencers.). 
 
 ## ¿Cual es el mensaje?
 - Somos tecnológicos, innovadores y creativos.
