@@ -734,7 +734,7 @@ section {
   background: #6F549F;
 }
 .services .service-box.darkblue {
-  border-bottom: 3px solid #1C3661;
+  border-bottom: 3px solid #1C3661 ;
 }
 .services .service-box.darkblue .icon {
   color: #1C3661;
@@ -747,7 +747,7 @@ section {
   background: #1C3661;
 }
 .services .service-box.orange {
-  border-bottom: 3px solid #F3AA27;
+  border-bottom: 3px solid #F3AA27; 
 }
 .services .service-box.orange .icon {
   color: #F3AA27;
