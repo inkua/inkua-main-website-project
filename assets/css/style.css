@@ -720,69 +720,69 @@ section {
 .services .service-box.blue:hover {
   background: #034C8C;
 }
-.services .service-box.orange {
+.services .service-box.purple {
   border-bottom: 3px solid #6F549F;
 }
-.services .service-box.orange .icon {
+.services .service-box.purple .icon {
   color: #6F549F;
   background: #fde3c4;
 }
-.services .service-box.orange .read-more {
+.services .service-box.purple .read-more {
   color: #6F549F;
 }
-.services .service-box.orange:hover {
+.services .service-box.purple:hover {
   background: #6F549F;
 }
-.services .service-box.green {
+.services .service-box.darkblue {
   border-bottom: 3px solid #1C3661;
 }
-.services .service-box.green .icon {
+.services .service-box.darkblue .icon {
   color: #1C3661;
   background: #cffddf;
 }
-.services .service-box.green .read-more {
+.services .service-box.darkblue .read-more {
   color: #1C3661;
 }
-.services .service-box.green:hover {
+.services .service-box.darkblue:hover {
   background: #1C3661;
 }
-.services .service-box.red {
+.services .service-box.orange {
   border-bottom: 3px solid #F3AA27;
 }
-.services .service-box.red .icon {
+.services .service-box.orange .icon {
   color: #F3AA27;
   background: #fef7f8;
 }
-.services .service-box.red .read-more {
+.services .service-box.orange .read-more {
   color: #F3AA27;
 }
-.services .service-box.red:hover {
+.services .service-box.orange:hover {
   background: #F3AA27;
 }
-.services .service-box.purple {
+.services .service-box.lightblue {
   border-bottom: 3px solid #4594D9;
 }
-.services .service-box.purple .icon {
+.services .service-box.lightblue .icon {
   color: #4594D9;
   background: #f8e4fd;
 }
-.services .service-box.purple .read-more {
+.services .service-box.lightblue .read-more {
   color: #4594D9;
 }
-.services .service-box.purple:hover {
+.services .service-box.lightblue:hover {
   background: #4594D9;
 }
-.services .service-box.pink {
+.services .service-box.darkorange {
   border-bottom: 3px solid #ED6938;
 }
-.services .service-box.pink .icon {
+.services .service-box.darkorange .icon {
   color: #ED6938;
   background: #feecf7;
 }
-.services .service-box.pink .read-more {
+.services .service-box.darkorange .read-more {
   color: #ED6938;
 }
-.services .service-box.pink:hover {
+.services .service-box.darkorange:hover {
   background: #ED6938;
 }
 .services .service-box:hover h3, .services .service-box:hover p, .services .service-box:hover .read-more {
