@@ -13,7 +13,7 @@ Slides [Google Slides](https://docs.google.com/presentation/d/1cEnodYumcF0q0fm9e
 - Potenciales donantes(Fundaciones/empresas/gobiernos), 
 - Potenciales colaboradores (Profesionales/Mentores/Profesores) 
 - Potenciales participantes (Estudiantes)
-- Potenciales Aliados(ONGs/Referentes/Influencers.). 
+- Potenciales Aliados(ONGs/Referentes/Influencers). 
 
 ## ¿Cual es el mensaje?
 - Somos tecnológicos, innovadores y creativos.
