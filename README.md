@@ -18,7 +18,7 @@ Slides [Google Slides](https://docs.google.com/presentation/d/1cEnodYumcF0q0fm9e
 ## ¿Cual es el mensaje?
 - Somos tecnológicos, innovadores y creativos.
 - Somos una comunidad de personas que buscan ayudar a las personas.
-- Somos una fundación creada en Alemania, regida por las reglas de la unión europea..
+- Somos una fundación creada en Alemania, regida por las normas de la unión europea..
 - Somos transparentes y honestos.
 - Tenemos una cultura y misión.
 - Nuestros miembros son profesionales de distintas áreas que colaboran entre si para generar valor. 
