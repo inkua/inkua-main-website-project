@@ -1146,9 +1146,19 @@
                 <input type="email" class="form-control" name="email" placeholder="Tu Email" required>
               </div>
 
+
               <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Motivo de Consulta" required>
-              </div>
+              <select class="form-select form-control" name="subject" aria-label="Default select example" required>
+                <option selected>Motivo de Consulta</option>
+                <option value="1">Sumarse al programa como Participante</option>
+                <option value="1">Sumarse al programa como Asesor</option>
+                <option value="1">Donar al programa</option>
+                <option value="2">Proponer un emprendimiento</option>
+                <option value="3">Sugerir una alianza</option>
+                <option value="4">Otra motivo...</option>
+              </select>
+            </div>
+
 
               <div class="col-md-12">
                 <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
