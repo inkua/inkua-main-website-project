@@ -1,41 +1,86 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+// Google reCAPTCHA API key configuration https://www.google.com/u/1/recaptcha/admin/
+  $siteKey     = '6LfooAAfAAAAAOpyYZZI3FY2lpc4MWmnafXUsdhj'; 
+  $secretKey     = 'secret'; 
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+// Email configuration 
+$postData = $statusMsg = $valErr = ''; 
+$status = 'error'; 
+$toEmail = 'info@inkua.de';
+$fromName = $_POST['name'];
+$formEmail = $_POST['email'];
+$subject = $_POST['subject'];
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+$postData = $_POST; 
+$name = substr(trim($_POST['name']), 0, 240); 
+$email = substr(trim($_POST['email'], 0, 240)); 
+$subject = substr(trim($_POST['subject'], 0, 540)); 
+$message = substr(trim($_POST['message'], 0, 2540)); 
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
 
-  echo $contact->send();
+$toEmail = "info@inkua.de";
+
+// Validate form fields 
+if(empty($name)){ 
+  $valErr .= 'Please enter your name.<br/>'; 
+} 
+if(empty($email) || filter_var($email, FILTER_VALIDATE_EMAIL) === false){ 
+  $valErr .= 'Please enter a valid email.<br/>'; 
+} 
+if(empty($subject)){ 
+  $valErr .= 'Please enter subject.<br/>'; 
+} 
+if(empty($message)){ 
+  $valErr .= 'Please enter your message.<br/>'; 
+} 
+
+if(empty($valErr)){ 
+  if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])){ 
+ 
+    // Verify the reCAPTCHA response 
+    $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']); 
+     
+    // Decode json data 
+    $responseData = json_decode($verifyResponse); 
+     
+    // If reCAPTCHA response is valid 
+    if($responseData->success){ 
+ 
+      // Send email notification to the site admin 
+      $subject = 'New contact request submitted'; 
+      $htmlContent = " 
+          <h2>Contact Request Details</h2> 
+          <p><b>Name: </b>".$name."</p> 
+          <p><b>Email: </b>".$email."</p> 
+          <p><b>Subject: </b>".$subject."</p> 
+          <p><b>Message: </b>".$message."</p> 
+      "; 
+       
+      // Always set content-type when sending HTML email 
+      $headers = "MIME-Version: 1.0" . "\r\n"; 
+      $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+      // More headers 
+      $headers .= 'From:'.$fromName.' <'.$formEmail.'>' . "\r\n"; 
+       
+      // Send email 
+      @mail($toEmail, $subject, $htmlContent, $headers); 
+       
+      $status = 'success'; 
+      $statusMsg = 'Thank you! Your contact request has submitted successfully, we will get back to you soon.'; 
+      $postData = ''; 
+  }else{ 
+      $statusMsg = 'Human verification failed, please try again.'; 
+  } 
+} else{  
+  $statusMsg = '<p>Please fill all the mandatory fields:</p>'.trim($valErr, '<br/>'); 
+} 
+}
+
+// Display status message 
+echo $statusMsg;
+
+
+
 ?>
