@@ -79,7 +79,7 @@ if(empty($valErr)){
       //mail($toEmail, $subject, $htmlContent, $headers); 
        
       $status = 'success'; 
-      $statusMsg = 'Thank you! Your contact request has submitted successfully, we will get back to you soon.'; 
+      $statusMsg = 'OK'; 
       $postData = ''; 
 
       $mail = new PHPMailer(true);
