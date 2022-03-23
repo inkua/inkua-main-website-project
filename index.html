@@ -1149,6 +1149,49 @@
       </header>
 
       <div class="row gy-4">
+
+
+        <div class="col-lg-6" >
+          <form action="forms/contact.php" method="post" class="php-email-form">
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Nombre y Apellido" required>
+              </div>
+              <div class="col-md-6 ">
+                <input type="email" class="form-control" name="email" placeholder="Tu Email" required>
+              </div>
+              <div class="col-md-12">
+              <select class="form-select form-control" name="subject" aria-label="Default select example" required>
+                <option value="" selected>Motivo de Consulta</option>
+                <option value="Quiero ser Participante">Sumarse al programa como Participante</option>
+                <option value="Quiero ser Asesor">Sumarse al programa como Asesor</option>
+                <option value="Quiero ser Director">Postularse para ser Director de un área o departamento</option>
+                <option value="Quiero Donar">Donar al programa</option>
+                <option value="Quiero proponer un emprendimiento">Proponer un emprendimiento</option>
+                <option value="Quiero sugerir una alianza o proyecto">Sugerir una alianza o proyecto de impacto</option>
+                <option value="Quiero sugerir cambios o mejoras">Sugerir cambios o mejoras</option>
+                <option value="8">Otra motivo...</option>
+              </select>
+            </div>
+              <div class="col-md-12">
+                <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
+              </div>
+              <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">¡Tu mensaje fue enviado!</div>
+                <div class="form-input">
+                  <!-- Google reCAPTCHA box -->
+                  <div class="g-recaptcha" data-sitekey="6LfooAAfAAAAAOpyYZZI3FY2lpc4MWmnafXUsdhj"></div>
+               </div><br>
+                <button type="submit">Enviar Mensaje</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+
         <div class="col-lg-6">
           <div class="row gy-4">
             <div class="col-md-6">
@@ -1183,54 +1226,10 @@
 
         </div>
 
-        <div class="col-lg-6" >
-          <form action="forms/contact.php" method="post" class="php-email-form">
-            <div class="row gy-4">
-
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Nombre y Apellido" required>
-              </div>
-
-              <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Tu Email" required>
-              </div>
-
-
-              <div class="col-md-12">
-              <select class="form-select form-control" name="subject" aria-label="Default select example" required>
-                <option value="" selected>Motivo de Consulta</option>
-                <option value="Quiero ser Participante">Sumarse al programa como Participante</option>
-                <option value="Quiero ser Asesor">Sumarse al programa como Asesor</option>
-                <option value="Quiero ser Director">Postularse para ser Director de un área o departamento</option>
-                <option value="Quiero Donar">Donar al programa</option>
-                <option value="Quiero proponer un emprendimiento">Proponer un emprendimiento</option>
-                <option value="Quiero sugerir una alianza o proyecto">Sugerir una alianza o proyecto de impacto</option>
-                <option value="Quiero sugerir cambios o mejoras">Sugerir cambios o mejoras</option>
-                <option value="8">Otra motivo...</option>
-              </select>
-            </div>
 
 
 
-              <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
-              </div>
 
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">¡Tu mensaje fue enviado!</div>
-                <div class="form-input">
-                  <!-- Google reCAPTCHA box -->
-                  <div class="g-recaptcha" data-sitekey="6LfooAAfAAAAAOpyYZZI3FY2lpc4MWmnafXUsdhj"></div>
-               </div><br>
-                <button type="submit">Enviar Mensaje</button>
-              </div>
-
-            </div>
-          </form>
-
-        </div>
 
       </div>
 
