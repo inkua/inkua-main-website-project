@@ -3,6 +3,17 @@
 // Google reCAPTCHA API key configuration https://www.google.com/u/1/recaptcha/admin/
   $siteKey     = '6LfooAAfAAAAAOpyYZZI3FY2lpc4MWmnafXUsdhj'; 
   $secretKey     = 'secret'; 
+  $passmail = "secret";
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'src/Exception.php';
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
+
+
 
 
 // Email configuration 
@@ -15,10 +26,10 @@ $subject = $_POST['subject'];
 
 $postData = $_POST; 
 $name = substr(trim($_POST['name']), 0, 240); 
-$email = substr(trim($_POST['email'], 0, 240)); 
-$subject = substr(trim($_POST['subject'], 0, 540)); 
-$message = substr(trim($_POST['message'], 0, 2540)); 
-
+$email = substr(trim($_POST['email']), 0, 240); 
+$subject = substr(trim($_POST['subject']), 0, 540); 
+$message = substr(trim($_POST['message']), 0, 2540); 
+$statusMsg = "OK";
 
 $toEmail = "info@inkua.de";
 
@@ -65,11 +76,93 @@ if(empty($valErr)){
       $headers .= 'From:'.$fromName.' <'.$formEmail.'>' . "\r\n"; 
        
       // Send email 
-      @mail($toEmail, $subject, $htmlContent, $headers); 
+      //mail($toEmail, $subject, $htmlContent, $headers); 
        
       $status = 'success'; 
       $statusMsg = 'Thank you! Your contact request has submitted successfully, we will get back to you soon.'; 
       $postData = ''; 
+
+      $mail = new PHPMailer(true);
+
+      try {
+          //Server settings
+         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+          $mail->isSMTP();                                            //Send using SMTP
+          $mail->Host       = 'mail.inkua.de';                     //Set the SMTP server to send through
+          $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+          $mail->Username   = 'info@inkua.de';                     //SMTP username
+          $mail->Password   = $passmail;                               //SMTP password
+          $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+          $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+      
+          //Recipients
+          $mail->setFrom($email, 'Info');
+          $mail->addAddress($toEmail, 'Info');     //Add a recipient
+
+          //Content
+          $mail->isHTML(true);                                  //Set email format to HTML
+          $mail->Subject = $subject;
+          $mail->Body    = $htmlContent;
+   
+          $mail->send();
+          //echo 'Message has been sent';
+      } catch (Exception $e) {
+          echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+          $statusMsg = "Error";
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }else{ 
       $statusMsg = 'Human verification failed, please try again.'; 
   } 
