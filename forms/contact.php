@@ -86,7 +86,7 @@ if(empty($valErr)){
 
           //Content
           $mail->isHTML(true);                                  //Set email format to HTML
-          $mail->Subject = $emailsubject;
+          $mail->Subject = $emailsubject." - ". $subject;
           $mail->Body    = $htmlContent;
           $mail->send();
 
