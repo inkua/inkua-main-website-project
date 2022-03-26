@@ -60,12 +60,12 @@ if(empty($valErr)){
     if($responseData->success){ 
  
       // Send email notification to the site admin 
-      $subject = 'New contact request submitted'; 
+      $emailsubject = 'Contacto sitio Web'; 
       $htmlContent = " 
           <h2>Contact Request Details</h2> 
           <p><b>Name: </b>".$name."</p> 
           <p><b>Email: </b>".$email."</p> 
-          <p><b>Subject: </b>".$subject."</p> 
+          <p><b>Motivo: </b>".$subject."</p> 
           <p><b>Message: </b>".$message."</p> 
       "; 
        
@@ -76,7 +76,7 @@ if(empty($valErr)){
       $headers .= 'From:'.$fromName.' <'.$formEmail.'>' . "\r\n"; 
        
       // Send email 
-      //mail($toEmail, $subject, $htmlContent, $headers); 
+      //mail($toEmail, $emailsubject, $htmlContent, $headers); 
        
       $status = 'success'; 
       $statusMsg = 'OK'; 
