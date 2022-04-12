@@ -25,6 +25,38 @@
 <meta name="twitter:description" content="La primera organización abierta 100% remota y sin fines de lucro que incuba talentos y acelera projectos en Latam para crear oportunidades">
 <meta name="twitter:image" content="https://inkua.de/assets/img/preview.png">
 
+<script>
+  // Hay que ver si hacemos un redirect directo al idioma de usuario automaticamente o si mandamos a un landing donde elija el idioma.
+  var getFirstBrowserLanguage = function () {
+    var nav = window.navigator,
+    browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+    i,
+    language;
+
+    // support for HTML 5.1 "navigator.languages"
+    if (Array.isArray(nav.languages)) {
+      for (i = 0; i < nav.languages.length; i++) {
+        language = nav.languages[i];
+        if (language && language.length) {
+          return language;
+        }
+      }
+    }
+
+    // support for other well known properties in browsers
+    for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+      language = nav[browserLanguagePropertyKeys[i]];
+      if (language && language.length) {
+        return language;
+      }
+    }
+
+    return null;
+  };
+
+console.log(getFirstBrowserLanguage());
+</script>
+  
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
       
 
