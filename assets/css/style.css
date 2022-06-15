@@ -8,6 +8,22 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+button#CybotCookiebotDialogBodyButtonAccept.CybotCookiebotDialogBodyButton{
+  background-color: #034c8c !important;
+  border-color:#034c8c !important;
+}
+
+#CybotCookiebotDialogBodyButtonDecline{
+  border:2px solid #034c8c !important;
+}
+
+
+#CybotCookiebotDialogBodyEdgeMoreDetailsLink{
+  color: #034c8c !important;
+}
+
+
 :root {
   scroll-behavior: smooth;
 }
