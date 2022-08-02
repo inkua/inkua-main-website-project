@@ -3,7 +3,7 @@
 // Secrets
 $siteKey     = '6LfooAAfAAAAAOpyYZZI3FY2lpc4MWmnafXUsdhj';  // Google reCAPTCHA API key configuration https://www.google.com/u/1/recaptcha/admin/
 $secretKey     = '';
-$passmail = "";
+$passmail = '';
 
 
 use PHPMailer\PHPMailer\PHPMailer;
